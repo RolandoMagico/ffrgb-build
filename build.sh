@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ################################################################################
 # Configuration Section
@@ -39,7 +40,7 @@ git clone ${FFRGB_BUILD_GLUON_GIT_URL} -b ${FFRGB_BUILD_GLUON_GIT_BRANCH} ${FFRG
 
 # Apply Gluon patches
 for patch in patches/gluon/*.patch; do
-	git apply --3way --ignore-space-change --directory=${FFRGB_BUILD_GLUON_DIRECTORY} "$patch"
+	git apply --ignore-space-change --directory=${FFRGB_BUILD_GLUON_DIRECTORY} "$patch"
 done
 
 ln -s $(realpath ${FFRGB_BUILD_SITE_DIRECTORY}) $(realpath ${FFRGB_BUILD_GLUON_DIRECTORY}/site)
