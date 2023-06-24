@@ -45,7 +45,13 @@ done
 
 ln -s $(realpath ${FFRGB_BUILD_SITE_DIRECTORY}) $(realpath ${FFRGB_BUILD_GLUON_DIRECTORY}/site)
 
+# Get OpenWRT and apply patches
 make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} update
+# Apply Gluon patches
+for patch in patches/openwrt/*.patch; do
+	git apply --ignore-space-change --directory=${FFRGB_BUILD_GLUON_DIRECTORY}/openwrt "$patch"
+done
+
 for FFRGB_BUILD_GLUON_TARGET in ${FFRGB_BUILD_GLUON_TARGETS}; do
     echo Building ${FFRGB_BUILD_GLUON_TARGET}
     make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} -j${FFRGB_BUILD_JOB_COUNT} GLUON_TARGET=${FFRGB_BUILD_GLUON_TARGET}
