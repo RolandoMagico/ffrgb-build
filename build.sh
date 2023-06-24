@@ -13,10 +13,10 @@ FFRGB_BUILD_GLUON_GIT_URL=https://github.com/freifunk-gluon/gluon.git
 FFRGB_BUILD_GLUON_GIT_BRANCH=v2022.1.x
 FFRGB_BUILD_GLUON_DIRECTORY=gluon
 
-# OpenWrt Git references
+# OpenWrt Git references, not (yet) used
 FFRGB_BUILD_OPENWRT_GIT_URL=https://github.com/openwrt/openwrt.git
 FFRGB_BUILD_OPENWRT_GIT_BRANCH=openwrt-22.03
-FFRGB_BUILD_GLUON_DIRECTORY=openwrt
+FFRGB_BUILD_OPENWRT_DIRECTORY=openwrt
 
 # Select gluon targets
 FFRGB_BUILD_GLUON_TARGETS="ramips-mt7621"
@@ -39,7 +39,7 @@ git clone ${FFRGB_BUILD_GLUON_GIT_URL} -b ${FFRGB_BUILD_GLUON_GIT_BRANCH} ${FFRG
 
 # Apply Gluon patches
 for patch in patches/gluon/*.patch; do
-	git am --3way --ignore-space-change --keep-cr --directory=${FFRGB_BUILD_GLUON_DIRECTORY} "$patch"
+	git apply --3way --ignore-space-change --directory=${FFRGB_BUILD_GLUON_DIRECTORY} "$patch"
 done
 
 ln -s $(realpath ${FFRGB_BUILD_SITE_DIRECTORY}) $(realpath ${FFRGB_BUILD_GLUON_DIRECTORY}/site)
@@ -53,4 +53,3 @@ done
 # Create images and move output folder to local directory
 make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} manifest GLUON_AUTOUPDATER_BRANCH=${FFRGB_BUILD_GLUON_AUTOUPDATER_BRANCH}
 mv ${FFRGB_BUILD_GLUON_DIRECTORY}/output .
-
