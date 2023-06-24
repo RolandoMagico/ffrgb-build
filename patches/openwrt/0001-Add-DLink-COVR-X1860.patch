@@ -1,5 +1,5 @@
 diff --git a/scripts/dlink-covr-x-image.py b/scripts/dlink-covr-x-image.py
-new file mode 100644
+new file mode 100755
 index 0000000000..fd73fa9d53
 --- /dev/null
 +++ b/scripts/dlink-covr-x-image.py
