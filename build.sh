@@ -42,7 +42,7 @@ for patch in patches/gluon/*.patch; do
 	git am --3way --ignore-space-change --keep-cr --directory=${FFRGB_BUILD_GLUON_DIRECTORY} "$patch"
 done
 
-git.exe am --3way --ignore-space-change --keep-cr
+git am --3way --ignore-space-change --keep-cr
 ln -s $(realpath ${FFRGB_BUILD_SITE_DIRECTORY}) $(realpath ${FFRGB_BUILD_GLUON_DIRECTORY}/site)
 
 make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} update
