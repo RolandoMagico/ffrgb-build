@@ -1,0 +1,26 @@
+From 300cb6a7449ebe6aef6b31431fc1f2a766417678 Mon Sep 17 00:00:00 2001
+From: RolandoMagico <75312877+RolandoMagico@users.noreply.github.com>
+Date: Sat, 24 Jun 2023 20:22:58 +0200
+Subject: [PATCH] Add DLink COVR-X1860
+
+---
+ targets/ramips-mt7621 | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/targets/ramips-mt7621 b/targets/ramips-mt7621
+index 46afa067..d269567a 100644
+--- a/targets/ramips-mt7621
++++ b/targets/ramips-mt7621
+@@ -25,6 +25,9 @@ device('cudy-x6-v2', 'cudy_x6-v2', {
+ 
+ 
+ -- D-Link
++device('d-link-covr-x1860-a1', 'dlink_covr-x1860-a1', {
++	factory_ext = '-recovery.bin',
++})
+ 
+ device('d-link-dap-x1860-a1', 'dlink_dap-x1860-a1')
+ 
+-- 
+2.41.0.windows.1
+
