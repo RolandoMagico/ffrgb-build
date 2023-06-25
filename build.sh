@@ -11,7 +11,7 @@ FFRGB_BUILD_SITE_DIRECTORY=site-ffrgb
 
 # Gluon Git references
 FFRGB_BUILD_GLUON_GIT_URL=https://github.com/freifunk-gluon/gluon.git
-FFRGB_BUILD_GLUON_GIT_BRANCH=v2022.1.x
+FFRGB_BUILD_GLUON_GIT_BRANCH=next
 FFRGB_BUILD_GLUON_DIRECTORY=gluon
 
 # OpenWrt Git references, not (yet) used
