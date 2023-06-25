@@ -1,8 +1,8 @@
 diff --git a/modules b/modules
-index 333b29b2..fefd5029 100644
+index 333b29b2..4e688d3d 100644
 --- a/modules
 +++ b/modules
-@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing gluon'
+@@ -2,11 +2,11 @@ GLUON_FEEDS='packages routing gluon'
  
  OPENWRT_REPO=https://github.com/openwrt/openwrt.git
  OPENWRT_BRANCH=openwrt-22.03
@@ -11,3 +11,8 @@ index 333b29b2..fefd5029 100644
  
  PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
  PACKAGES_PACKAGES_BRANCH=openwrt-22.03
+-PACKAGES_PACKAGES_COMMIT=55eed1761207f4dfdb8e7d79138f6f65c8849b50
++PACKAGES_PACKAGES_COMMIT=1c066e61f4bffedb1d9ea1b75590b9a8e2773a51
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt/routing.git
+ PACKAGES_ROUTING_BRANCH=openwrt-22.03
