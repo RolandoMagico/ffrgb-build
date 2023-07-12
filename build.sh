@@ -20,8 +20,8 @@ FFRGB_BUILD_OPENWRT_GIT_BRANCH=openwrt-22.03
 FFRGB_BUILD_OPENWRT_DIRECTORY=openwrt
 
 # Select gluon targets
-FFRGB_BUILD_GLUON_TARGETS="ramips-mt7621"
-FFRGB_BUILD_GLUON_DEVICES="d-link-dap-x1860-a1"
+FFRGB_BUILD_GLUON_TARGETS="mediatek-mt7622"
+FFRGB_BUILD_GLUON_DEVICES="d-link-eagle-pro-ai-m32"
 FFRGB_BUILD_GLUON_AUTOUPDATER_BRANCH=experimental
 
 # Number of jobs used for make: Use number of processors
