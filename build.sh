@@ -45,9 +45,9 @@ done
 
 ln -s $(realpath ${FFRGB_BUILD_SITE_DIRECTORY}) $(realpath ${FFRGB_BUILD_GLUON_DIRECTORY}/site)
 
-# Get OpenWRT and apply patches
+# make target "update" will fetch OpenWrt
 make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} update
-# Apply Gluon patches
+# Apply OpenWrt patches
 for patch in patches/openwrt/*.patch; do
 	git apply --ignore-space-change --directory=${FFRGB_BUILD_GLUON_DIRECTORY}/openwrt "$patch"
 done
@@ -59,4 +59,4 @@ done
 
 # Create images and move output folder to local directory
 make --directory=${FFRGB_BUILD_GLUON_DIRECTORY} manifest GLUON_AUTOUPDATER_BRANCH=${FFRGB_BUILD_GLUON_AUTOUPDATER_BRANCH}
-mv ${FFRGB_BUILD_GLUON_DIRECTORY}/output .
+mv ${FFRGB_BUILD_GLUON_DIRECTORY}/output ./Build_"$(date +"%Y%m%d_%I%M")"
