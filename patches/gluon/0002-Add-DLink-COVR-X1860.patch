@@ -1,14 +1,12 @@
 diff --git a/targets/ramips-mt7621 b/targets/ramips-mt7621
-index 46afa067..d269567a 100644
+index 46afa067..d1eb324d 100644
 --- a/targets/ramips-mt7621
 +++ b/targets/ramips-mt7621
-@@ -25,6 +25,9 @@ device('cudy-x6-v2', 'cudy_x6-v2', {
+@@ -25,6 +25,7 @@ device('cudy-x6-v2', 'cudy_x6-v2', {
  
  
  -- D-Link
-+device('d-link-covr-x1860-a1', 'dlink_covr-x1860-a1', {
-+	factory_ext = 'factory-recovery.bin',
-+})
++device('d-link-covr-x1860-a1', 'dlink_covr-x1860-a1')
  
  device('d-link-dap-x1860-a1', 'dlink_dap-x1860-a1')
  
