@@ -6,12 +6,12 @@ set -e
 ################################################################################
 # Freifunk Regensburg Git references
 FFRGB_BUILD_SITE_GIT_URL=https://github.com/ffrgb/site-ffrgb.git
-FFRGB_BUILD_SITE_GIT_BRANCH=v2022.x
+FFRGB_BUILD_SITE_GIT_BRANCH=v2021.1.2
 FFRGB_BUILD_SITE_DIRECTORY=site-ffrgb
 
 # Gluon Git references
 FFRGB_BUILD_GLUON_GIT_URL=https://github.com/freifunk-gluon/gluon.git
-FFRGB_BUILD_GLUON_GIT_BRANCH=v2022.1.x
+FFRGB_BUILD_GLUON_GIT_REF=204f7e56e31a5e114d594582bbaba5b751770e98
 FFRGB_BUILD_GLUON_DIRECTORY=gluon
 
 # OpenWrt Git references, not (yet) used
@@ -36,7 +36,10 @@ rm -R -f ${FFRGB_BUILD_GLUON_DIRECTORY}
 
 # Clone repositories
 git clone ${FFRGB_BUILD_SITE_GIT_URL} -b ${FFRGB_BUILD_SITE_GIT_BRANCH} ${FFRGB_BUILD_SITE_DIRECTORY}
-git clone ${FFRGB_BUILD_GLUON_GIT_URL} -b ${FFRGB_BUILD_GLUON_GIT_BRANCH} ${FFRGB_BUILD_GLUON_DIRECTORY}
+git clone ${FFRGB_BUILD_GLUON_GIT_URL} ${FFRGB_BUILD_GLUON_DIRECTORY}
+pushd ${FFRGB_BUILD_GLUON_DIRECTORY}
+git checkout ${FFRGB_BUILD_GLUON_GIT_REF}
+popd
 
 # Apply Gluon patches
 for patch in patches/gluon/*.patch; do
